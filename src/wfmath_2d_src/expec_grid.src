@@ -1,0 +1,1 @@
+val = wfmath_2d_expec_op(psi_arr, cmplx(grid, kind=fp), dgrid)

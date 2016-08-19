@@ -1,0 +1,5 @@
+real(fp) :: expec_op, expec_op2
+
+expec_op = wfmath_1d_expec_op(psi_arr, op_arr, dgrid)
+expec_op2 = wfmath_1d_expec_op(psi_arr, op_arr(:)**2, dgrid)
+val = sqrt(expec_op2 - expec_op**2)

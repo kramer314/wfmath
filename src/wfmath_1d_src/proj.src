@@ -1,0 +1,3 @@
+!$omp workshare
+val = dot_product(psi1_arr, psi2_arr) * dgrid
+!$omp end workshare

@@ -1,0 +1,7 @@
+real(fp) :: sqrt_norm
+
+sqrt_norm = sqrt(wfmath_2d_norm(psi_arr, dgrid))
+
+!$omp workshare
+psi_arr(:,:) = psi_arr(:,:) / sqrt_norm
+!$omp end workshare

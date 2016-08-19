@@ -1,0 +1,1 @@
+val = wfmath_1d_proj(psi1_arr(:), func_arr(:) * psi2_arr(:), dgrid)

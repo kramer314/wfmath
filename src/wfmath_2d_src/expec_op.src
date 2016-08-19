@@ -1,0 +1,1 @@
+val = real(wfmath_2d_iprod(psi_arr, op_arr, psi_arr, dgrid), kind=fp)
