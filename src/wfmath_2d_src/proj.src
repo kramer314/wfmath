@@ -1,14 +1,11 @@
 integer(ip) :: i2
 complex(fp) :: dprod(size(psi1_arr, 1), size(psi1_arr, 2))
-
-!$omp parallel workshare
-dprod(:,:) = matmul(conjg(transpose(psi1_arr(:,:))), psi2_arr(:,:))
-!$omp end parallel workshare
+complex(fp) :: work_arr(size(psi1_arr, 1), size(psi1_arr, 2))
 
 val = (0.0_fp, 0.0_fp)
-!$omp parallel do reduction(+:val)
+!$omp parallel do reduction(+:val) private(i2)
 do i2 = 1, size(psi1_arr, 2)
-   val = val + sum(dprod(:, i2))
+    val = val + sum(abs(psi1_arr(:, i2))**2)
 end do
 !$omp end parallel do
 
