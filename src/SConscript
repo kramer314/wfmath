@@ -3,4 +3,4 @@
 
 Import("env")
 
-env.Library("wfmath", source=Glob("*.f90"))
+env.SharedLibrary("wfmath", source=Glob("*.f90"))
